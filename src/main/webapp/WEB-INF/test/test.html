@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدیریت کالاهای انبار</title>
+
+    <!-- <link rel="stylesheet" href="../test.css"> -->
+
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal:target {
+            display: flex;
+        }
+
+        .modal-content {
+            width: 900px;
+            background: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div><h1>مدیریت کالا</h1></div>
+</header>
+
+<main>
+
+    <section>
+
+        <div>
+            <input type="text" placeholder="جستجو بر اساس دسته بندی">
+            <button>جستجو</button>
+            <button type="reset">پاک کردن</button>
+        </div>
+
+        <a href="#addProductModal">+ افزودن کالا</a>
+
+    </section>
+
+    <section>
+
+        <table>
+
+            <thead>
+            <tr>
+                <th>شناسه</th>
+                <th>نام کالا</th>
+                <th>کد</th>
+                <th>دسته‌بندی</th>
+                <th>موجودی</th>
+                <th>وضعیت</th>
+                <th>قیمت خرید</th>
+                <th>قیمت فروش</th>
+                <th>عملیات</th>
+            </tr>
+            </thead>
+
+            <tbody></tbody>
+
+        </table>
+
+        <p>کالایی برای نمایش وجود ندارد.</p>
+
+    </section>
+
+</main>
+
+<div id="addProductModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h2>افزودن کالای جدید</h2>
+        </div>
+
+        <form>
+
+            <input type="hidden">
+
+            <label>
+                نام کالا
+                <input type="text" required>
+            </label>
+
+            <br><br>
+
+            <label>
+                کد کالا
+                <input type="text" required>
+            </label>
+
+            <br><br>
+
+            <label>
+                دسته‌بندی
+                <input type="text" required>
+            </label>
+
+            <br><br>
+
+            <label>
+                موجودی
+                <input type="number" min="0" required>
+            </label>
+
+            <br><br>
+
+            <label>
+                قیمت خرید
+                <input type="number" min="0" step="0.01" required>
+            </label>
+
+            <br><br>
+
+            <label>
+                قیمت فروش
+                <input type="number" min="0" step="0.01" required>
+            </label>
+
+            <br><br>
+
+            <div>
+                <a href="#">انصراف</a>
+                <button type="submit">ذخیره</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
