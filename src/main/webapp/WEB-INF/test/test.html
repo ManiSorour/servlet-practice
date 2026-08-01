@@ -1,148 +1,100 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-
+<html lang="fa">
+<link rel="stylesheet" href="test.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مدیریت کالاهای انبار</title>
-
-    <!-- <link rel="stylesheet" href="../test.css"> -->
-
-    <style>
-        .modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, .5);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal:target {
-            display: flex;
-        }
-
-        .modal-content {
-            width: 900px;
-            background: white;
-            padding: 20px;
-        }
-    </style>
+    <title>warehouse management</title>
 </head>
 
-<body>
 
-<header>
-    <div><h1>مدیریت کالا</h1></div>
+<body>
+<header class="header">
+    <div class="main-header">
+        <h1>product's management</h1>
+    </div>
 </header>
 
 <main>
-
-    <section>
-
-        <div>
-            <input type="text" placeholder="جستجو بر اساس دسته بندی">
-            <button>جستجو</button>
-            <button type="reset">پاک کردن</button>
+    <section class="toolbar">
+        <h1></h1>
+        <div class="search-box">
+                <input   id="searchInput"     placeholder="search by product name">
+                <button  id="searchBtn"  type="button" class="btn btn-search"> search</button>
+                <button id="deleteBtn"      type="button" class="btn btn-remove"> delete</button>
         </div>
-
-        <a href="#addProductModal">+ افزودن کالا</a>
-
+        <button type="button"  id="openAddFormBtn" class="btn btn-add">add product</button>
     </section>
 
-    <section>
+    <section class="table">
 
-        <table>
+        <table id="product_table">
 
-            <thead>
+            <thead >
             <tr>
-                <th>شناسه</th>
-                <th>نام کالا</th>
-                <th>کد</th>
-                <th>دسته‌بندی</th>
-                <th>موجودی</th>
-                <th>وضعیت</th>
-                <th>قیمت خرید</th>
-                <th>قیمت فروش</th>
-                <th>عملیات</th>
+                <th>id</th>
+                <th>name</th>
+                <th>code</th>
+                <th>category</th>
+                <th>quantity</th>
+                <th>purchasePrice</th>
+                <th>sellPrice</th>
+                <th>operation</th>
+
             </tr>
+
             </thead>
+            <tbody id="productTableBody">
 
-            <tbody></tbody>
-
+            </tbody>
         </table>
 
-        <p>کالایی برای نمایش وجود ندارد.</p>
-
     </section>
-
 </main>
 
-<div id="addProductModal" class="modal">
-
-    <div class="modal-content">
-
+<div id="productModal"    class="overlayModal" >
+    <div class="modal">
         <div class="modal-header">
-            <h2>افزودن کالای جدید</h2>
+            <h2 id="modalTitle">add product</h2>
+            <button id="closeModalBtn" type="button" class="btn-close">x</button>
         </div>
 
-        <form>
 
-            <input type="hidden">
+        <form  id="productForm">
+            <input type="hidden" id="productId">
 
-            <label>
-                نام کالا
-                <input type="text" required>
+            <label   > product name
+                <input id="nameField" type="text">
             </label>
 
-            <br><br>
-
-            <label>
-                کد کالا
-                <input type="text" required>
+            <label> productCode
+                <input id="codeField">
             </label>
 
-            <br><br>
-
-            <label>
-                دسته‌بندی
-                <input type="text" required>
+            <label> category
+                <input  id="categoryField"   type="text">
             </label>
 
-            <br><br>
-
-            <label>
-                موجودی
-                <input type="number" min="0" required>
+            <label> quantity
+                <input id="quantityField"   min="0"  type="number">
             </label>
 
-            <br><br>
-
-            <label>
-                قیمت خرید
-                <input type="number" min="0" step="0.01" required>
+            <label> purchasePrice
+                <input id="purchasePriceField"  min="0" type="number">
             </label>
 
-            <br><br>
-
-            <label>
-                قیمت فروش
-                <input type="number" min="0" step="0.01" required>
+            <label> sellPrice
+                <input id="sellPriceField"  min="0" type="number">
             </label>
-
-            <br><br>
-
-            <div>
-                <a href="#">انصراف</a>
-                <button type="submit">ذخیره</button>
+            <div class="modal-action">
+                <button type="button"  id="cancelFormBtn"  class="btn btn-quit"> quit</button>
+                <button type="submit" class="btn btn-save"> save</button>
             </div>
-
         </form>
-
     </div>
-
 </div>
 
+
+<script src="Practice.js"></script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@ let products = [
 ];
 
 const tableBody = document.getElementById("productTableBody");
-const emptyState = document.getElementById("emptyState");
+// const emptyState = document.getElementById("emptyState");
 
 const searchInput = document.getElementById("searchInput")
 const searchBtn = document.getElementById("searchBtn")
@@ -15,7 +15,7 @@ const clearSearchBtn = document.getElementById("clearSearchBtn");
 const modal = document.getElementById("productModal");
 const modalTitle = document.getElementById("modalTitle");
 const productForm = document.getElementById("productForm");
-const formError = document.getElementById("formError");
+// const formError = document.getElementById("formError");
 
 const openAddFormBtn = document.getElementById("openAddFormBtn");
 const closeModalBtn = document.getElementById("closeModalBtn");
@@ -107,7 +107,6 @@ function searchByCategory() {
 
 function openModal(mode, product = null) {
 
-    formError.hidden = true;
     productForm.reset();
 
     if (mode === "add") {
@@ -146,14 +145,15 @@ productForm.addEventListener("submit", (event) => {
     const purchasePrice = Number(purchasePriceField.value);
     const sellPrice = Number(sellPriceField.value);
 
-    if (!name || !code || !category) {
-        showFormError("fill all fields")
-        return;
-    }
-    if (quantity < 0 || purchasePrice < 0 || sellPrice < 0) {
-        showFormError("number can't be negative")
-        return;
-    }
+    // if (!name || !code || !category) {
+    //     showFormError("fill all fields")
+    //     return;
+    // }
+
+    // if (quantity < 0 || purchasePrice < 0 || sellPrice < 0) {
+    //     showFormError("number can't be negative")
+    //     return;
+    // }
 
     const isEditMode = productIdField.value !== "";
 
@@ -169,10 +169,10 @@ productForm.addEventListener("submit", (event) => {
 
 });
 
-function showFormError(mesage) {
-    formError.textContent = mesage;
-    formError.hidden = false;
-}
+// function showFormError(mesage) {
+//     formError.textContent = mesage;
+//     formError.hidden = false;
+// }
 
 
 function addProduct(data) {
