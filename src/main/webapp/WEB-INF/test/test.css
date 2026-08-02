@@ -151,6 +151,37 @@ tbody tr:hover {
 
 
 
+.blurred {
+    filter: blur(8px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.form-error {
+    color: #ad4141;
+    background: #ffffff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+
+
+.loginModal{
+background: white;
+    border: #ad4141;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    overflow-y: auto;
+
+
+}
+
+
+
 .modal{
 
 background: #fff;
@@ -161,11 +192,20 @@ border-radius: 8px;
     overflow-y: auto;
 }
 
+.loginHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+
+
 .modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+        margin-bottom: 20px;
 }
 
 .modal-header h2 {
@@ -190,6 +230,25 @@ border-radius: 8px;
     border-radius: 5px;
     font-size: 14px;
 }
+#loginForm label{
+    display: block;
+    font-size: 20px;
+    color: var(--color-text-muted);
+    margin-bottom: 12px;
+
+}
+
+
+#loginForm input {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    padding: 9px 10px;
+    border: 1px solid #ad4141;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
 
 .modal-action{
 

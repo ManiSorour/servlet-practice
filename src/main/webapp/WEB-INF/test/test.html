@@ -8,50 +8,85 @@
 
 
 <body>
-<header class="header">
-    <div class="main-header">
-        <h1>product's management</h1>
-    </div>
-</header>
-
-<main>
-    <section class="toolbar">
-        <h1></h1>
-        <div class="search-box">
-                <input   id="searchInput"     placeholder="search by product name">
-                <button  id="searchBtn"  type="button" class="btn btn-search"> search</button>
-                <button id="deleteBtn"      type="button" class="btn btn-remove"> delete</button>
+<div id="appContent">
+    <header class="header">
+        <div class="main-header">
+            <h1>product's management</h1>
         </div>
-        <button type="button"  id="openAddFormBtn" class="btn btn-add">add product</button>
-    </section>
+    </header>
 
-    <section class="table">
+    <main>
+        <section class="toolbar">
+            <h1></h1>
+            <div class="search-box">
+                <input id="searchInput" placeholder="search by product name">
+                <button id="searchBtn" type="button" class="btn btn-search"> search</button>
+                <button id="deleteBtn" type="button" class="btn btn-remove"> clear</button>
+            </div>
+            <button type="button" id="openAddFormBtn" class="btn btn-add">add product</button>
+        </section>
 
-        <table id="product_table">
+        <section class="table">
 
-            <thead >
-            <tr>
-                <th>id</th>
-                <th>name</th>
-                <th>code</th>
-                <th>category</th>
-                <th>quantity</th>
-                <th>purchasePrice</th>
-                <th>sellPrice</th>
-                <th>operation</th>
+            <table id="product_table">
 
-            </tr>
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>code</th>
+                    <th>category</th>
+                    <th>quantity</th>
+                    <th>purchasePrice</th>
+                    <th>sellPrice</th>
+                    <th>operation</th>
 
-            </thead>
-            <tbody id="productTableBody">
+                </tr>
 
-            </tbody>
-        </table>
+                </thead>
+                <tbody id="productTableBody">
 
-    </section>
-</main>
+                </tbody>
+            </table>
 
-<div id="productModal"    class="overlayModal" >
+        </section>
+    </main>
+</div>
+<div  id="loginModal" class="overlayModal">
+    <div  class=" loginModal">
+        <div class="loginHeader">
+            <h2 id="loginModalTitle">login</h2>
+        </div>
+
+        <form id="loginForm">
+            <label> username
+                <input id="usernameField" type="text" required>
+            </label>
+
+            <label> password
+                <input id="passwordField"   type="password" required>
+            </label>
+            <p id="loginError" class="form-error" hidden></p>
+
+            <div class="modal-action">
+                <button type="submit" class="btn btn-save">enter</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="productModal" class="overlayModal">
     <div class="modal">
         <div class="modal-header">
             <h2 id="modalTitle">add product</h2>
@@ -59,10 +94,10 @@
         </div>
 
 
-        <form  id="productForm">
+        <form id="productForm">
             <input type="hidden" id="productId">
 
-            <label   > product name
+            <label> product name
                 <input id="nameField" type="text">
             </label>
 
@@ -71,22 +106,22 @@
             </label>
 
             <label> category
-                <input  id="categoryField"   type="text">
+                <input id="categoryField" type="text">
             </label>
 
             <label> quantity
-                <input id="quantityField"   min="0"  type="number">
+                <input id="quantityField" min="0" type="number">
             </label>
 
             <label> purchasePrice
-                <input id="purchasePriceField"  min="0" type="number">
+                <input id="purchasePriceField" min="0" type="number">
             </label>
 
             <label> sellPrice
-                <input id="sellPriceField"  min="0" type="number">
+                <input id="sellPriceField" min="0" type="number">
             </label>
             <div class="modal-action">
-                <button type="button"  id="cancelFormBtn"  class="btn btn-quit"> quit</button>
+                <button type="button" id="cancelFormBtn" class="btn btn-quit"> quit</button>
                 <button type="submit" class="btn btn-save"> save</button>
             </div>
         </form>

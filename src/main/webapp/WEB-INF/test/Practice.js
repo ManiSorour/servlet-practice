@@ -4,6 +4,14 @@ let products = [{
     {id: 2, name: "iphone13", code: "ip13", category: "phone", quantity: "10", purchasePrice: "1000", sellPrice: "1200"}
 ];
 
+const  MOCK_USERS =[
+    {username : "ali" , password:"8871",role: "WAREHOUSE_KEEPER"},
+    {username: "mani" , password: "8871" , role: "ADMIN"}
+];
+
+
+
+
 const tableBody = document.getElementById("productTableBody");
 
 const searchInput = document.getElementById("searchInput");
@@ -27,6 +35,19 @@ const categoryField = document.getElementById("categoryField");
 const quantityField = document.getElementById("quantityField");
 const purchasePriceField = document.getElementById("purchasePriceField");
 const sellPriceField = document.getElementById("sellPriceField");
+
+
+const STORAGE_KEY = "warehouse_products";
+
+
+
+const appContent = document.getElementById("appContent");
+const loginForm = document.getElementById("loginForm");
+const loginModal = document.getElementById("loginModal");
+const loginUsername = document.getElementById("usernameField");
+const loginPassword = document.getElementById("passwordField");
+const loginError = document.getElementById("loginError");
+
 
 
 function renderTable() {
@@ -116,9 +137,32 @@ productForm.addEventListener("submit", (event) => {
     renderTable(products);
 });
 
+appContent.classList.add("blurred")
+loginForm.addEventListener("submit", (event)=> {
+        event.preventDefault();
+
+        const username = loginUsername.value.trim();
+        const password = loginPassword.value.trim();
+
+        const user = MOCK_USERS.find(u => u.username === username && u.password === password);
+
+        if (user) {
+            loginModal.style.display = "none";
+            appContent.classList.remove("blurred");
+            loginError.hidden = true;
+
+        } else {
+            loginError.textContent = "نام کاربری یا رمز عبور اشتباه است";
+            loginError.hidden = false;
+        }
+
+
+    });
+
 function addProduct(data){
     const newProduct = {id: generateNewId() , ...data};
     products.push(newProduct);
+    saveToStorage();
 }
 
 function updateProduct(id, data){
@@ -127,11 +171,13 @@ function updateProduct(id, data){
         console.log("product not found")
     }
     Object.assign(product, data);
+    saveToStorage();
 
 }
 
 function deleteProduct(id){
     products = products.filter(p=> p.id !== id);
+    saveToStorage();
 }
 
 tableBody.addEventListener("click", (event)=>{
@@ -159,4 +205,18 @@ tableBody.addEventListener("click", (event)=>{
 
 });
 
+
+function saveToStorage(){
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
+}
+
+function loadFromStorage(){
+    const savedData = localStorage.getItem(STORAGE_KEY );
+    if (savedData){
+        products = JSON.parse(savedData);
+    }
+
+}
+
+loadFromStorage();
 renderTable(products);
