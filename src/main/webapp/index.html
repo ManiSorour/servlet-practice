@@ -1,5 +1,5 @@
 <html lang="fa">
-<link rel="stylesheet" href="test.css">
+<link rel="stylesheet" href="style.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -94,31 +94,31 @@
         </div>
 
 
-        <form id="productForm">
+        <form id="productForm" ACTION="/demo/api/products" method="post">
             <input type="hidden" id="productId">
 
             <label> product name
-                <input id="nameField" type="text">
+                <input id="nameField" type="text" name="name" required>
             </label>
 
             <label> productCode
-                <input id="codeField">
+                <input id="codeField" name="code" required>
             </label>
 
             <label> category
-                <input id="categoryField" type="text">
+                <input id="categoryField" type="text" name="category" required>
             </label>
 
             <label> quantity
-                <input id="quantityField" min="0" type="number">
+                <input id="quantityField" min="0" type="number" name="quantity" required>
             </label>
 
             <label> purchasePrice
-                <input id="purchasePriceField" min="0" type="number">
+                <input id="purchasePriceField" min="0" type="number" name="purchasePrice" required>
             </label>
 
             <label> sellPrice
-                <input id="sellPriceField" min="0" type="number">
+                <input id="sellPriceField" min="0" type="number" name="sellPrice" required>
             </label>
             <div class="modal-action">
                 <button type="button" id="cancelFormBtn" class="btn btn-quit"> quit</button>

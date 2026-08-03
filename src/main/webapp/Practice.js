@@ -1,16 +1,7 @@
-let products = [{
-    id: 1, name: "iphone12", code: "ip12", category: "phone", quantity: "10", purchasePrice: "1000", sellPrice: "1200"
-},
-    {id: 2, name: "iphone13", code: "ip13", category: "phone", quantity: "10", purchasePrice: "1000", sellPrice: "1200"}
+let products = [
 ];
 
-const  MOCK_USERS =[
-    {username : "ali" , password:"8871",role: "WAREHOUSE_KEEPER"},
-    {username: "mani" , password: "8871" , role: "ADMIN"}
-];
-
-
-
+const MOCK_USERS =[{username:"ali" , password:"1"}];
 
 const tableBody = document.getElementById("productTableBody");
 
@@ -48,7 +39,16 @@ const loginUsername = document.getElementById("usernameField");
 const loginPassword = document.getElementById("passwordField");
 const loginError = document.getElementById("loginError");
 
+async function loadProduct(){
 
+   try {
+       const response = await fetch("/demo/api/products")
+       products = await response.json();
+       renderTable(products);
+   }catch (error){
+       console.error("error in loading the products data",error)
+   }
+}
 
 function renderTable() {
     tableBody.innerHTML = "";
@@ -159,10 +159,16 @@ loginForm.addEventListener("submit", (event)=> {
 
     });
 
-function addProduct(data){
-    const newProduct = {id: generateNewId() , ...data};
-    products.push(newProduct);
-    saveToStorage();
+async function addProduct(data){
+    const response = await fetch("/demo/api/products",
+        {method: "POST",
+        headers :{"Content-Type": "application/json" },
+            body: JSON.stringify(data)
+
+        }
+
+
+        )
 }
 
 function updateProduct(id, data){
@@ -171,13 +177,11 @@ function updateProduct(id, data){
         console.log("product not found")
     }
     Object.assign(product, data);
-    saveToStorage();
 
 }
 
 function deleteProduct(id){
     products = products.filter(p=> p.id !== id);
-    saveToStorage();
 }
 
 tableBody.addEventListener("click", (event)=>{
@@ -218,5 +222,4 @@ function loadFromStorage(){
 
 }
 
-loadFromStorage();
-renderTable(products);
+loadProduct();
