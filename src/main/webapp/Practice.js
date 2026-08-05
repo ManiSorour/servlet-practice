@@ -114,7 +114,7 @@ openAddFormBtn.addEventListener("click", () => openModal("add"));
 closeModalBtn.addEventListener("click", () => closeModal());
 cancelFormBtn.addEventListener("click", () => closeModal());
 
-productForm.addEventListener("submit", (event) => {
+productForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
 
@@ -128,9 +128,9 @@ productForm.addEventListener("submit", (event) => {
     const isEditMode = productIdField.value !== "";
 
     if (isEditMode) {
-        updateProduct(Number(productIdField.value), {name, code, category, quantity, purchasePrice, sellPrice});
+        await updateProduct(Number(productIdField.value), {name, code, category, quantity, purchasePrice, sellPrice});
     } else {
-        addProduct({name, code, category, quantity, purchasePrice, sellPrice});
+        await addProduct({name, code, category, quantity, purchasePrice, sellPrice});
     }
 
     closeModal();
@@ -160,15 +160,24 @@ loginForm.addEventListener("submit", (event)=> {
     });
 
 async function addProduct(data){
-    const response = await fetch("/demo/api/products",
-        {method: "POST",
-        headers :{"Content-Type": "application/json" },
-            body: JSON.stringify(data)
+   try {
+       const response = await fetch("/demo/api/products",
+           {method: "POST",
+               headers :{"Content-Type": "application/json" },
+               body: JSON.stringify(data)
 
-        }
+           });
+       if (!response){
+           const massage = await response.json();
+           alert("خطا: " + massage);
+           return;
+       }
 
+       await loadProduct();
+   }catch (error){
+       console.error("خطا در افزودن کالا" +error )
+   }
 
-        )
 }
 
 function updateProduct(id, data){
@@ -210,16 +219,6 @@ tableBody.addEventListener("click", (event)=>{
 });
 
 
-function saveToStorage(){
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
-}
 
-function loadFromStorage(){
-    const savedData = localStorage.getItem(STORAGE_KEY );
-    if (savedData){
-        products = JSON.parse(savedData);
-    }
-
-}
 
 loadProduct();
