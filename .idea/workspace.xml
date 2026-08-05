@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c904fde-704a-41b4-88c3-ff6dec4b0200" name="Changes" comment="add the storage and login form &#10;next step= going back to backend and servlet">
+    <list default="true" id="6c904fde-704a-41b4-88c3-ff6dec4b0200" name="Changes" comment="add the post methode&#10;work ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ProductServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Practice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Practice.js" afterDir="false" />
@@ -238,7 +238,7 @@
       <workItem from="1785567107247" duration="21488000" />
       <workItem from="1785651422190" duration="21482000" />
       <workItem from="1785737839439" duration="4362000" />
-      <workItem from="1785919409126" duration="4074000" />
+      <workItem from="1785919409126" duration="7254000" />
     </task>
     <task id="LOCAL-00001" summary="add the html css and js">
       <option name="closed" value="true" />
@@ -264,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785667561249</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add the post methode&#10;work ok">
+      <option name="closed" value="true" />
+      <created>1785928962268</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1785928962268</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,6 +292,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add the html css and js" />
     <MESSAGE value="add the storage and login form &#10;next step= going back to backend and servlet" />
-    <option name="LAST_COMMIT_MESSAGE" value="add the storage and login form &#10;next step= going back to backend and servlet" />
+    <MESSAGE value="add the post methode&#10;work ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="add the post methode&#10;work ok" />
   </component>
 </project>

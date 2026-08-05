@@ -53,9 +53,9 @@ public class ProductServlet extends HttpServlet {
 
 
         BufferedReader reader = request.getReader();
-        Product order  = gson.fromJson(reader , Product.class);
+        Product order = gson.fromJson(reader, Product.class);
 
-        User performedBy = new Admin(1,"mani","8871");
+        User performedBy = new Admin(1, "mani", "8871");
         try {
             wareHouseService.addProduct(
                     order.getName(),
@@ -68,16 +68,42 @@ public class ProductServlet extends HttpServlet {
                     performedBy
             );
             response.setStatus(HttpServletResponse.SC_CREATED);
-        }catch (Exception e){
+        } catch (Exception e) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             response.getWriter().print(gson.toJson(e.getMessage()));
         }
 
 
+    }
 
 
+    @Override
+    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
 
+        BufferedReader reader = request.getReader();
+        Product order = gson.fromJson(reader, Product.class);   // از کسی که ریکوئست میفرسته read  میکنیم و بعدش به جیسون تبدیل میکنیم
 
+        User performedBy = new Admin(1,"mani" , "8871");
+
+        try {
+            wareHouseService.updateProduct(
+                    order.getId(),
+                    order.getName(),
+                    order.getCode(),
+                    order.getCategory(),
+                    order.getPurchasePrice(),
+                    order.getSellPrice(),
+                    5,
+                    performedBy
+
+            );
+            response.setStatus(HttpServletResponse.SC_CREATED);
+        }catch (Exception e){
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().print(gson.toJson(e.getMessage()));
+        }
 
     }
 }

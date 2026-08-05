@@ -180,12 +180,24 @@ async function addProduct(data){
 
 }
 
-function updateProduct(id, data){
-    const product = products.find(p=> p.id === id);
-    if (!product){
-        console.log("product not found")
+async function updateProduct(id, data) {
+    try {
+        const response = await fetch("/demo/api/products",{
+            method:"PUT" ,
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(id , ...data)
+        });
+        if (!response.ok) {
+            const errorMsg = await response.json();
+            alert("خطا: " + errorMsg);
+            return;
+        }
+
+        await loadProduct();
+    } catch (error) {
+        console.error("خطا در ویرایش کالا:", error);
+
     }
-    Object.assign(product, data);
 
 }
 
