@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c904fde-704a-41b4-88c3-ff6dec4b0200" name="Changes" comment="add the post methode&#10;work ok">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/AuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/AuthServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/WareHouseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/WareHouseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Practice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Practice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,14 +40,12 @@
     &quot;assignee&quot;: &quot;ManiSorour&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="9a94d7a4-9963-4933-a830-b64bcee6cd3a" />
-        <option name="url" value="https://github.com/ManiSorour/servlet-practice.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ManiSorour/servlet-practice.git&quot;,
+    &quot;accountId&quot;: &quot;e029a488-f5c9-4004-a7b9-44bcd01b30ff&quot;
+  }
+}</component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -59,7 +64,6 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="3H5DzTtHwhdIbY3CtNh52FaWIgP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -68,20 +72,31 @@
   &quot;keyToString&quot;: {
     &quot;Application.ProductServlet.executor&quot;: &quot;Run&quot;,
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Smart Tomcat.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;Smart Tomcat.new ser.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/aydak/Documents/taban-group/demo/src/main/java&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion.inline&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -90,6 +105,7 @@
       <recent name="C:\Users\aydak\Documents\taban-group\demo\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mani\IdeaProjects\servlet-practice\src" />
       <recent name="C:\Users\aydak\Documents\taban-group\demo\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\aydak\Documents\taban-group\demo\src\main\webapp\WEB-INF\test" />
     </key>
@@ -97,7 +113,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Smart Tomcat.Unnamed">
+  <component name="RunManager" selected="Smart Tomcat.new ser">
     <configuration name="ProductServlet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.demo.ProductServlet" />
       <module name="demo" />
@@ -201,13 +217,36 @@
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
-          <option name="name" value="Apache Tomcat/11.0.24" />
-          <option name="path" value="$USER_HOME$/Desktop/mani/apache-tomcat-11.0.24" />
+          <option name="name" value="Apache Tomcat/11.0.24 (2)" />
+          <option name="path" value="$PROJECT_DIR$/../../../../tomcatFiles/apache-tomcat-11.0.24-windows-x64/apache-tomcat-11.0.24" />
           <option name="version" value="11.0.24.0" />
         </TomcatInfo>
       </option>
       <option name="vmOptions" value="" />
-      <module name="demo" />
+      <module name="servlet-practice" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="new ser" type="com.poratu.idea.plugins.tomcat">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="catalinaBase" value="C:\Users\mani\.SmartTomcat\servlet-practice\servlet-practice" />
+      <option name="contextPath" value="/demo" />
+      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="extraClassPath" value="" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/11.0.24 (3)" />
+          <option name="path" value="$PROJECT_DIR$/../../../../tomcatFiles/apache-tomcat-11.0.24-windows-x64/apache-tomcat-11.0.24" />
+          <option name="version" value="11.0.24.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <module name="servlet-practice" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -215,13 +254,21 @@
     <list>
       <item itemvalue="Application.ProductServlet" />
       <item itemvalue="Smart Tomcat.Unnamed" />
-      <item itemvalue="Tomcat Server.Unnamed" />
+      <item itemvalue="Smart Tomcat.new ser" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ProductServlet" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.337" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.8665.337" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -294,5 +341,9 @@
     <MESSAGE value="add the storage and login form &#10;next step= going back to backend and servlet" />
     <MESSAGE value="add the post methode&#10;work ok" />
     <option name="LAST_COMMIT_MESSAGE" value="add the post methode&#10;work ok" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

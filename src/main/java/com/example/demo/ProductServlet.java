@@ -6,6 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import model.product.Product;
 import model.role.Admin;
 import model.role.User;
@@ -26,8 +28,7 @@ public class ProductServlet extends HttpServlet {
 
     @Override
     public void init() {
-        ProductRepository repository = new ProductJsonRepository("C:/Users/aydak/Downloads/first-proj-warehouse-managment-master/first-proj-warehouse-managment-master/products.json"
-        );
+        ProductRepository repository = new ProductJsonRepository("D:/files for prog/product.json.txt");
         wareHouseService = new WareHouseService(repository);
     }
 
@@ -55,7 +56,10 @@ public class ProductServlet extends HttpServlet {
         BufferedReader reader = request.getReader();
         Product order = gson.fromJson(reader, Product.class);
 
-        User performedBy = new Admin(1, "mani", "8871");
+        User performedBy = (User) request.getSession().getAttribute("currentUser");
+
+
+
         try {
             wareHouseService.addProduct(
                     order.getName(),
@@ -85,7 +89,7 @@ public class ProductServlet extends HttpServlet {
         BufferedReader reader = request.getReader();
         Product order = gson.fromJson(reader, Product.class);   // از کسی که ریکوئست میفرسته read  میکنیم و بعدش به جیسون تبدیل میکنیم
 
-        User performedBy = new Admin(1,"mani" , "8871");
+        User performedBy = (User) request.getSession().getAttribute("currentUser");
 
         try {
             wareHouseService.updateProduct(
@@ -100,11 +104,38 @@ public class ProductServlet extends HttpServlet {
 
             );
             response.setStatus(HttpServletResponse.SC_CREATED);
-        }catch (Exception e){
+        } catch (Exception e) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             response.getWriter().print(gson.toJson(e.getMessage()));
         }
+    }
 
+
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+
+        String idParameter = request.getParameter("id");
+        if (idParameter == null) {
+
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().print(gson.toJson("id doesnt exist "));
+
+        }
+        int id = Integer.parseInt(idParameter);
+
+        User performedBy = (User) request.getSession().getAttribute("currentUser");
+
+
+        try {
+            wareHouseService.deleteProduct(id, performedBy);
+            response.setStatus(HttpServletResponse.SC_OK);
+        } catch (Exception e) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().print(gson.toJson(e.getMessage()));
+        }
     }
 }
 

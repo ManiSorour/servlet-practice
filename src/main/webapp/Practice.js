@@ -138,22 +138,35 @@ productForm.addEventListener("submit", async (event) => {
 });
 
 appContent.classList.add("blurred")
-loginForm.addEventListener("submit", (event)=> {
+loginForm.addEventListener("submit", async (event)=> {
         event.preventDefault();
 
         const username = loginUsername.value.trim();
         const password = loginPassword.value.trim();
 
-        const user = MOCK_USERS.find(u => u.username === username && u.password === password);
+        try {
+            const userParameters = new URLSearchParams();
+            userParameters.append("username",username);
+            userParameters.append("password",password);
 
-        if (user) {
+            const response = await fetch("/demo/api/login",{
+                method:"POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body:userParameters
+            });
+            if (!response.ok) {
+                const massage = await response.json();
+                alert("خطا: " + massage)
+                return;
+            }
             loginModal.style.display = "none";
             appContent.classList.remove("blurred");
             loginError.hidden = true;
 
-        } else {
-            loginError.textContent = "نام کاربری یا رمز عبور اشتباه است";
-            loginError.hidden = false;
+
+        }catch (error){
+            console.error("خطا در لاگین:", error);
+
         }
 
 
@@ -201,11 +214,28 @@ async function updateProduct(id, data) {
 
 }
 
-function deleteProduct(id){
-    products = products.filter(p=> p.id !== id);
+async function deleteProduct(id){
+
+    try {
+        const response = await fetch(`demo/api/products?id=${id}` , {
+            method:"DELETE"
+        });
+
+
+        if (!response.ok){
+            const  errorMsg = response.json();
+            alert("خطا: " + errorMsg);
+            return;
+        }
+
+        await loadProduct();
+
+    }catch (error){
+        console.error("خطا در حذف کالا",error);
+    }
 }
 
-tableBody.addEventListener("click", (event)=>{
+tableBody.addEventListener("click", async (event)=>{
 
     const button = event.target.closest("button[data-action]");
     if (!button) return;
@@ -223,7 +253,7 @@ tableBody.addEventListener("click", (event)=>{
         const product = products.find(p => p.id === id);
         const confirmed = confirm(`آیا از حذف «${product.name}» مطمئنید؟`);
         if (confirmed) {
-            deleteProduct(id);
+            await deleteProduct(id);
             renderTable(products);
         }
     }

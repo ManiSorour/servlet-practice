@@ -4,6 +4,7 @@ package service;
 //import database.configuration.DataBaseConnection;
 //import database.connectToDb.ProductGenericRepository;
 //import database.connectToDb.TransactionGenericRepository;
+
 import model.product.Product;
 import model.product.ProductStatus;
 import model.role.User;
@@ -117,7 +118,7 @@ public class WareHouseService {
 //                } catch (SQLException e) {
 //                    System.err.println("خطا در بازگرداندن autoCommit: " + e.getMessage());
 //                }
-            }
+    }
 //        }else {
 //            transactionDao.save(transaction);
 //        }
@@ -210,8 +211,6 @@ public class WareHouseService {
 //    public List<Transaction> getTransactionHistory() {
 //        return transactionJsonRepository.findAll();
 //    }
-
-
 
 
 }
