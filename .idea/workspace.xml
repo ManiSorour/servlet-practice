@@ -4,22 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c904fde-704a-41b4-88c3-ff6dec4b0200" name="Changes" comment="add the post methode&#10;work ok">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/AuthFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/AuthServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6c904fde-704a-41b4-88c3-ff6dec4b0200" name="Changes" comment="add the auth and filter in project (security)">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/repository/JpaStaticValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/repository/ProductJpaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/WareHouseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/WareHouseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Practice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Practice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/product/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="f4a98269-d960-4487-9a1d-7c731b775cef" value="" />
+    </colors>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -98,6 +101,12 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion.inline&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;postgresql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -340,7 +349,8 @@
     <MESSAGE value="add the html css and js" />
     <MESSAGE value="add the storage and login form &#10;next step= going back to backend and servlet" />
     <MESSAGE value="add the post methode&#10;work ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="add the post methode&#10;work ok" />
+    <MESSAGE value="add the auth and filter in project (security)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add the auth and filter in project (security)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

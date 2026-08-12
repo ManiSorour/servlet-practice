@@ -1,16 +1,29 @@
 package model.product;
 
-import java.util.Objects;
+import jakarta.persistence.*;
 
+import java.util.Objects;
+@Entity
+@Table(name = "products")
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id ;
+    @Column(name = "name" , nullable = false , unique = true)
     private String name;
-    private String code;        //barcode
+    @Column(name = "code" , nullable = false , unique = true)
+    private String code;
+    @Column(name = "category", nullable = false)
     private String category;
+    @Column(nullable = false)
     private double purchasePrice ;
+    @Column(nullable = false )
      private double sellPrice;
+    @Column(nullable = false)
     private int quantity;
     private int  minStockLevel;
+    @Enumerated(EnumType.STRING)
     private ProductStatus status;
 
 

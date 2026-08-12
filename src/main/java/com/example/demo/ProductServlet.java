@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpSession;
 import model.product.Product;
 import model.role.Admin;
 import model.role.User;
+import repository.ProductJpaRepository;
 import repository.ProductJsonRepository;
 import repository.ProductRepository;
 import service.WareHouseService;
@@ -28,7 +29,7 @@ public class ProductServlet extends HttpServlet {
 
     @Override
     public void init() {
-        ProductRepository repository = new ProductJsonRepository("D:/files for prog/product.json.txt");
+        ProductRepository repository = new ProductJpaRepository();
         wareHouseService = new WareHouseService(repository);
     }
 
