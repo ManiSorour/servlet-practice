@@ -51,6 +51,9 @@ public class Product {
         updateStatus();
     }
 
+    public Product() {
+    }
+
     private void updateStatus() {
 
         this.status = (quantity <= 0)

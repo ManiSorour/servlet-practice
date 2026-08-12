@@ -60,7 +60,6 @@ public class ProductServlet extends HttpServlet {
         User performedBy = (User) request.getSession().getAttribute("currentUser");
 
 
-
         try {
             wareHouseService.addProduct(
                     order.getName(),
@@ -123,7 +122,7 @@ public class ProductServlet extends HttpServlet {
 
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             response.getWriter().print(gson.toJson("id doesnt exist "));
-
+        return;
         }
         int id = Integer.parseInt(idParameter);
 

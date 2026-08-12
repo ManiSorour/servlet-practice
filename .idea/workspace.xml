@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c904fde-704a-41b4-88c3-ff6dec4b0200" name="Changes" comment="add the auth and filter in project (security)">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repository/JpaStaticValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repository/ProductJpaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/persistence.xml" afterDir="false" />
+    <list default="true" id="6c904fde-704a-41b4-88c3-ff6dec4b0200" name="Changes" comment="fixup! add the database setting in persistence.xml change the repository refrence in ProductServlet and make entityManagerFactory static and use it in ProductJpaRepository">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ProductServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/product/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Practice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Practice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,9 +112,11 @@
       <recent name="C:\Users\aydak\Documents\taban-group\demo\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mani\IdeaProjects\servlet-practice\src\main" />
+      <recent name="C:\Users\mani\IdeaProjects\servlet-practice\src\resources\META-INF" />
+      <recent name="C:\Users\mani\IdeaProjects\servlet-practice\src\resources" />
       <recent name="C:\Users\mani\IdeaProjects\servlet-practice\src" />
       <recent name="C:\Users\aydak\Documents\taban-group\demo\src\main\webapp\WEB-INF" />
-      <recent name="C:\Users\aydak\Documents\taban-group\demo\src\main\webapp\WEB-INF\test" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
@@ -339,7 +339,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -350,7 +362,9 @@
     <MESSAGE value="add the storage and login form &#10;next step= going back to backend and servlet" />
     <MESSAGE value="add the post methode&#10;work ok" />
     <MESSAGE value="add the auth and filter in project (security)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add the auth and filter in project (security)" />
+    <MESSAGE value="add the database setting in persistence.xml &#10;change the repository refrence in ProductServlet and &#10;make entityManagerFactory static and use it in ProductJpaRepository" />
+    <MESSAGE value="fixup! add the database setting in persistence.xml change the repository refrence in ProductServlet and make entityManagerFactory static and use it in ProductJpaRepository" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixup! add the database setting in persistence.xml change the repository refrence in ProductServlet and make entityManagerFactory static and use it in ProductJpaRepository" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

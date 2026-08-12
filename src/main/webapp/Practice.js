@@ -180,7 +180,7 @@ async function addProduct(data){
                body: JSON.stringify(data)
 
            });
-       if (!response){
+       if (!response.ok){
            const massage = await response.json();
            alert("خطا: " + massage);
            return;
