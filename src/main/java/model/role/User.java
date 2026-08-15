@@ -1,10 +1,20 @@
 package model.role;
 
-public abstract class User {
+import jakarta.persistence.*;
 
-    private int id ;
+@Entity
+@Table(name = "user")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "userType")
+public abstract class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(name = "username", nullable = false)
     private String username;
+    @Column(name = "password")
     private String passwordHash;
+    @Enumerated(EnumType.STRING)
     private Role role;
 
 
@@ -15,7 +25,8 @@ public abstract class User {
         this.role = role;
     }
 
-
+    protected User() {
+    }
 
     public abstract boolean canViewPrices();
 
@@ -43,6 +54,6 @@ public abstract class User {
 
     @Override
     public String toString() {
-        return username + "(" + role + ")" ;
+        return username + "(" + role + ")";
     }
 }

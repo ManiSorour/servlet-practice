@@ -4,19 +4,17 @@ import model.role.Admin;
 import model.role.Inspector;
 import model.role.InventoryManager;
 import model.role.User;
+import repository.UserJpaRepository;
 
 import java.util.List;
 public class AuthService {
 
-
-    private final List<User> users = List.of(
-            new Admin(4, "milad", "2")
-            ,new Inspector(2,"sati","zia"),
-            new InventoryManager(3,"h","h"),
-            new Admin(1,"mamad","mamad")
-    );
+    private final UserJpaRepository userJpaRepository = new UserJpaRepository();
 
     public User login(String username, String password) {
+
+        List<User> users = userJpaRepository.findAll();
+
 
         for (User user : users) {
 

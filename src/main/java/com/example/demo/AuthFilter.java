@@ -20,10 +20,7 @@ private final Gson gson = new Gson();
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
 
-        if ("GET".equalsIgnoreCase(req.getMethod())) {
-            chain.doFilter(request, response);
-            return;
-        }
+        
 
         HttpSession session = req.getSession(false);
         User currentUser = null;

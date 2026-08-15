@@ -1,12 +1,19 @@
 package model.role;
 
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("inspector")
 public class Inspector extends User {
 
-    // فقط اجازه داره که قیمت و موجودی و گزارش هارو (مشاهده) کنه
 
 
     public Inspector(int id, String username, String passwordHash ) {
         super(id, username, passwordHash, Role.INSPECTOR);
+    }
+
+    protected Inspector() {
     }
 
     @Override
